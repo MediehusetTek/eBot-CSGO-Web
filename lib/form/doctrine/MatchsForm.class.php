@@ -21,7 +21,7 @@ class MatchsForm extends BaseMatchsForm {
         $password = $password[rand(0, count($password)-1)];
 
         $this->widgetSchema["max_round"] = new sfWidgetFormSelect(array("choices" => array("15" => "MR15", "12" => "MR12", "9" => "MR9", "5" => "MR5", "3" => "MR3"), "default" => "MR15"));
-        $this->widgetSchema["overtime_max_round"] = new sfWidgetFormSelect(array("choices" => array("5" => "MR5", "3" => "MR3"), "default" => "MR5"));
+        $this->widgetSchema["overtime_max_round"] = new sfWidgetFormSelect(array("choices" => array("3" => "MR3", "5" => "MR5"), "default" => "MR3"));
         $this->widgetSchema["auto_start_time"] = new sfWidgetFormSelect(array("choices" => array("5" => "05 Minutes Before Startdate", "10" => "10 Minutes Before Startdate", "15" => "15 Minutes Before Startdate", "30" => "30 Minutes Before Startdate")));
         $this->widgetSchema["startdate"] = new sfWidgetFormInputText(array("default" => date("d.m.Y H:i")), array("id" => "match_startdate", "style" => "width:180px;"));
 
@@ -34,17 +34,18 @@ class MatchsForm extends BaseMatchsForm {
         $this->widgetSchema["max_round"]->setLabel("Max Rounds (MR)");
 
         $this->widgetSchema["config_ot"]->setLabel("OverTime");
+        $this->widgetSchema["config_ot"]->setDefault(true);
         $this->widgetSchema["config_streamer"]->setLabel("Streamer Ready");
         $this->widgetSchema["config_knife_round"]->setLabel("Knife Round");
         $this->widgetSchema["config_knife_round"]->setDefault(true);
         $this->widgetSchema["config_full_score"]->setLabel("Play all Rounds");
         $this->widgetSchema["config_password"]->setLabel("Password");
-        $this->widgetSchema["config_password"]->setDefault($password);
-        $this->widgetSchema["map_selection_mode"]->setDefault("normal");
-        $this->widgetSchema["rules"]->setDefault("eps");
+        $this->widgetSchema["config_password"]->setDefault("telenor76");
+        $this->widgetSchema["map_selection_mode"]->setDefault("bo2");
+        $this->widgetSchema["rules"]->setDefault("gamerno5v5");
 
         $this->widgetSchema["overtime_startmoney"]->setLabel("Overtime: Startmoney");
-        $this->widgetSchema["overtime_startmoney"]->setDefault("16000");
+        $this->widgetSchema["overtime_startmoney"]->setDefault("10000");
         $this->widgetSchema["overtime_max_round"]->setLabel("Overtime: Max Rounds");
 
         $this->widgetSchema['team_a']->addOption('method', 'getNameFlag');
@@ -64,7 +65,7 @@ class MatchsForm extends BaseMatchsForm {
         $this->widgetSchema["team_a_flag"] = new sfWidgetFormSelect(array("choices" => $aFlags));
         $this->widgetSchema["team_b_flag"] = new sfWidgetFormSelect(array("choices" => $aFlags));
 
-        $this->widgetSchema["map_selection_mode"]->addOption('choices', array('normal' => 'BO1', 'bo3_modeb' => 'BO3'));
+        $this->widgetSchema["map_selection_mode"]->addOption('choices', array('normal' => 'BO1', 'bo2' => 'BO2', 'bo3_modeb' => 'BO3'));
 
         // MOVING FIELDS
 
