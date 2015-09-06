@@ -41,7 +41,7 @@ class MatchsForm extends BaseMatchsForm {
         $this->widgetSchema["config_full_score"]->setLabel("Play all Rounds");
         $this->widgetSchema["config_password"]->setLabel("Password");
         $this->widgetSchema["config_password"]->setDefault("telenor76");
-        $this->widgetSchema["map_selection_mode"]->setDefault("bo2");
+        $this->widgetSchema["map_selection_mode"]->setDefault("bo1");
         $this->widgetSchema["rules"]->setDefault("gamerno5v5");
 
         $this->widgetSchema["overtime_startmoney"]->setLabel("Overtime: Startmoney");
@@ -65,7 +65,7 @@ class MatchsForm extends BaseMatchsForm {
         $this->widgetSchema["team_a_flag"] = new sfWidgetFormSelect(array("choices" => $aFlags));
         $this->widgetSchema["team_b_flag"] = new sfWidgetFormSelect(array("choices" => $aFlags));
 
-        $this->widgetSchema["map_selection_mode"]->addOption('choices', array('normal' => 'BO1', 'bo2' => 'BO2', 'bo3_modeb' => 'BO3'));
+        $this->widgetSchema["map_selection_mode"]->addOption('choices', array('normal' => 'BO1', 'bo3_modeb' => 'BO3'));
 
         // MOVING FIELDS
 
