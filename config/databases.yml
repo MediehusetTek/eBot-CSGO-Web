@@ -5,6 +5,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=ebotv3
-      username: root
-      password: 
+      dsn:      mysql:host=localhost;dbname=ebot
+      username: ebot
+      password: eb0t pl0x 1337
