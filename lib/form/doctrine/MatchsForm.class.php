@@ -40,21 +40,12 @@ class MatchsForm extends BaseMatchsForm {
         $this->widgetSchema["config_knife_round"]->setDefault(true);
         $this->widgetSchema["config_full_score"]->setLabel("Play all Rounds");
         $this->widgetSchema["config_password"]->setLabel("Password");
-<<<<<<< HEAD
-        $this->widgetSchema["config_password"]->setDefault("telenor76");
-        $this->widgetSchema["map_selection_mode"]->setDefault("bo1");
-        $this->widgetSchema["rules"]->setDefault("gamerno5v5");
-
-        $this->widgetSchema["overtime_startmoney"]->setLabel("Overtime: Startmoney");
-        $this->widgetSchema["overtime_startmoney"]->setDefault("10000");
-=======
         $this->widgetSchema["config_password"]->setDefault($password);
         $this->widgetSchema["map_selection_mode"]->setDefault("normal");
         $this->widgetSchema["rules"]->setDefault(sfConfig::get("app_default_rules"));
 
         $this->widgetSchema["overtime_startmoney"]->setLabel("Overtime: Startmoney");
         $this->widgetSchema["overtime_startmoney"]->setDefault(sfConfig::get("app_default_overtime_startmoney"));
->>>>>>> fea9561afe4369d1a3f2134fe37a8d82d612de58
         $this->widgetSchema["overtime_max_round"]->setLabel("Overtime: Max Rounds");
 
         $this->widgetSchema['team_a']->addOption('method', 'getNameFlag');
